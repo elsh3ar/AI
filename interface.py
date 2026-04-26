@@ -92,7 +92,7 @@ hr { border-color:var(--border) !important; margin:24px 0 !important; }
 }
 .metric-box .val { font-size:1.9rem; font-weight:800; line-height:1; margin-bottom:6px; }
 .metric-box .lbl { font-size:0.78rem; font-weight:600; color:#64748b;
-                   text-transform:uppercase; letter-spacing:0.7px; }
+                text-transform:uppercase; letter-spacing:0.7px; }
 .result-danger {
     background:linear-gradient(135deg,#ffeef0,#ffe0e3);
     border:2px solid #e63946; border-radius:16px; padding:24px 28px; color:#9b2226;
@@ -220,15 +220,15 @@ if analyse:
             mode   = "gauge+number+delta",
             value  = risk_pct,
             delta  = {'reference': 50, 'valueformat': '.1f',
-                      'increasing': {'color': '#c0392b'},
-                      'decreasing': {'color': '#1a7a6e'}},
+                    'increasing': {'color': '#c0392b'},
+                    'decreasing': {'color': '#1a7a6e'}},
             number = {'suffix': '%', 'font': {'size': 56, 'color': '#1a202c', 'family': 'Plus Jakarta Sans'}},
             domain = {'x': [0, 1], 'y': [0, 1]},
             title  = {'text': "<b>Liver Disease Risk Score</b>",
-                      'font': {'size': 15, 'color': '#1a202c', 'family': 'Plus Jakarta Sans'}},
+                    'font': {'size': 15, 'color': '#1a202c', 'family': 'Plus Jakarta Sans'}},
             gauge  = {
                 'axis': {'range': [0, 100], 'tickwidth': 1,
-                         'tickcolor': '#334155', 'tickfont': {'color': '#1a202c', 'size': 12}},
+                        'tickcolor': '#334155', 'tickfont': {'color': '#1a202c', 'size': 12}},
                 'bar':  {'color': risk_color, 'thickness': 0.30},
                 'bgcolor': 'white', 'borderwidth': 0,
                 'steps': [
@@ -237,7 +237,7 @@ if analyse:
                     {'range': [70,100], 'color': '#f5c6cb'},
                 ],
                 'threshold': {'line': {'color': risk_color, 'width': 4},
-                              'thickness': 0.85, 'value': risk_pct}
+                            'thickness': 0.85, 'value': risk_pct}
             }
         ))
         fig_gauge.update_layout(
@@ -270,17 +270,17 @@ if analyse:
         ))
         fig_bar.add_hrect(y0=0, y1=100, fillcolor="rgba(42,157,143,0.08)", line_width=0)
         fig_bar.add_shape(type="line", x0=-0.5, x1=len(keys)-0.5, y0=0,   y1=0,
-                          line=dict(color="#1a7a6e", width=2, dash="dot"))
+                        line=dict(color="#1a7a6e", width=2, dash="dot"))
         fig_bar.add_shape(type="line", x0=-0.5, x1=len(keys)-0.5, y0=100, y1=100,
-                          line=dict(color="#1a7a6e", width=2, dash="dot"))
+                        line=dict(color="#1a7a6e", width=2, dash="dot"))
         fig_bar.update_layout(
             title=dict(text="<b>Biomarkers vs Normal Range</b>",
-                       font=dict(size=14, color='#1a202c', family='Plus Jakarta Sans')),
+                    font=dict(size=14, color='#1a202c', family='Plus Jakarta Sans')),
             yaxis_title="% of Normal Range", xaxis_tickangle=-30,
             paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
             yaxis=dict(gridcolor='#cbd5e1', zerolinecolor='#94a3b8',
-                       tickfont=dict(color='#1a202c', size=11),
-                       title_font=dict(color='#1a202c')),
+                    tickfont=dict(color='#1a202c', size=11),
+                    title_font=dict(color='#1a202c')),
             xaxis=dict(linecolor='#cbd5e1', tickfont=dict(color='#1a202c', size=10)),
             margin=dict(t=60, b=110, l=50, r=20), height=340,
             font=dict(family='Plus Jakarta Sans', color='#1a202c'), showlegend=False)
@@ -310,7 +310,7 @@ if analyse:
                             tickfont=dict(size=10, color='#1a202c'),
                             gridcolor='#94a3b8', linecolor='#64748b'),
             angularaxis=dict(tickfont=dict(size=11, color='#1a202c', family='Plus Jakarta Sans'),
-                             linecolor='#94a3b8', gridcolor='#cbd5e1')
+                            linecolor='#94a3b8', gridcolor='#cbd5e1')
         ),
         paper_bgcolor='rgba(0,0,0,0)',
         legend=dict(orientation='h', yanchor='bottom', y=1.06, xanchor='center', x=0.5,
